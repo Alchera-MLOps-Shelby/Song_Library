@@ -23,7 +23,7 @@ public class RootLayoutController {
 	 *
 	 * @param songLib
 	 */
-	public void setSongLib(SongLib songlib) {
+	public void setSongLib(SongLib songLib) {
 		this.songLib = songLib;
 	}
 
