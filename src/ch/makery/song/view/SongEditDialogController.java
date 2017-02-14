@@ -110,14 +110,11 @@ public class SongEditDialogController {
 		}
 		//TODO: Check that album title can be left empty.
 
-		//TODO: Check for proper integer input of year.
-
 		//TODO: Check for uniqueness of song title and artist name.
 			/*if array index of song title and array index of artist name are the same,
 			 *errorMessage += "You already have that song.";
 			 */
 
-		//TODO: pre-select table element
 		//TODO: table sort? sort function is already built-in when table head is clicked on
 		//TODO: memory storage via XML
 		//TODO: add/delete selects the next, but if there is no next, then select prev

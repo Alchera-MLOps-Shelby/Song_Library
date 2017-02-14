@@ -47,6 +47,8 @@ public class SongOverviewController {
 		//Initialize the song table with the column.
 		songTitleColumn.setCellValueFactory(cellData -> cellData.getValue().songTitleProperty());
 
+		//Preselect the first song in the column.
+
 		//Clear song details.
 		showSongDetails(null);
 
@@ -57,7 +59,7 @@ public class SongOverviewController {
 	/*
 	 * Is called by the main application to give a reference back to itself.
 	 *
-	 * @param mainApp
+	 * @param songLib
 	 */
 	public void setSongLib(SongLib songLib) {
 		this.songLib = songLib;
