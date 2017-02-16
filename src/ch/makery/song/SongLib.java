@@ -2,7 +2,8 @@ package ch.makery.song;
 
 import java.io.File;
 import java.io.IOException;
-import java.util.Observable;
+import java.util.Collections;
+import java.util.List;
 import java.util.prefs.Preferences;
 
 import javax.xml.bind.JAXBContext;
@@ -15,6 +16,7 @@ import ch.makery.song.view.RootLayoutController;
 import ch.makery.song.view.SongEditDialogController;
 import ch.makery.song.view.SongOverviewController;
 import javafx.application.Application;
+import javafx.beans.Observable;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXMLLoader;
@@ -27,17 +29,19 @@ import javafx.stage.Modality;
 import javafx.stage.Stage;
 import javafx.util.Callback;
 
+
+
 public class SongLib extends Application {
 
 	private Stage primaryStage;
 	private BorderPane rootLayout;
 
-		//Callback<Song,Observable[]> cb =(Song song) -> new Observable[]{
-	     //   song.songTitleProperty(),
-	   // };
+		Callback<Song,Observable[]> cb =(Song song) -> new Observable[]{
+	       song.songTitleProperty(),
+	   };
 
 	//The data as an observable list of Songs.
-	private ObservableList<Song> songData = FXCollections.observableArrayList();
+	private ObservableList<Song> songData = FXCollections.observableArrayList(cb);
 
 	public SongLib() {
 		//Sample data.

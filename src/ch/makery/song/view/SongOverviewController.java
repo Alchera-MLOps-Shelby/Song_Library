@@ -72,10 +72,6 @@ public class SongOverviewController {
 	public void setSongLib(SongLib songLib) {
 		this.songLib = songLib;
 
-	//	Callback<Song,Observable[]> cb =(Song song) -> new Observable[]{
-	//	        song.songTitleProperty(),
-	//	    };
-
 		// 3. Wrap the observable list in a SortedList.
        SortedList<Song> sortedData = new SortedList<>(songLib.getSongData(),
        (Song song1, Song song2) -> {
@@ -97,8 +93,7 @@ public class SongOverviewController {
 		songTable.getSelectionModel().select(currentSong);
 		songTable.getFocusModel().focus(currentSong);
 
-		//Add observable list data to the table.
-		songTable.setItems(songLib.getSongData());
+
 	}
 
 	private void showSongDetails(Song song) {
